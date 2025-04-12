@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>DynamoAir - Reservation Form</title>
+    <style>
+    	body{
+    	background-image: url('/bg.jpg');
+    	background-repeat: no-repeat;
+    	}
+    </style>
+</head>
+<body>
+<h2>Reservation Form</h2>
+<form th:action="@{/submitReservation}" th:object="${reservation}" method="post">
+
+    <label>First Name:</label>
+    <input type="text" th:field="*{firstName}" required/><br/><br/>
+
+    <label>Last Name:</label>
+    <input type="text" th:field="*{lastName}" required/><br/><br/>
+
+    <label>Number of Passengers:</label>
+    <input type="number" th:field="*{numberOfPassengers}" required/><br/><br/>
+
+    <label>Seat Class:</label>
+    <select th:field="*{seatClass}">
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="First">First</option>
+    </select><br/><br/>
+
+    <label>Phone Number:</label>
+    <input type="text" th:field="*{phoneNumber}" required/><br/><br/>
+
+    <label>Date of Departing:</label>
+    <input type="date" th:field="*{dateOfDeparting}" required/><br/><br/>
+
+    <h3>Payment Info</h3>
+    <label>Amount:</label>
+    <input type="number" name="amount" step="0.01" required/><br/><br/>
+
+    <label>Payment Method:</label>
+    <input type="text" name="method" required/><br/><br/>
+
+    <label>Status:</label>
+    <input type="text" name="status" value="Pending" required/><br/><br/>
+
+    <button type="submit">Submit Reservation</button>
+</form>
+</body>
+</html>

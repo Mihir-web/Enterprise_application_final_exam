@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reservation Confirmation</title>
+</head>
+<body>
+    <h2>Booking Confirmed!</h2>
+	
+    <p><strong>First Name:</strong> <span th:text="${reservation.firstName}"></span></p>
+    <p><strong>Last Name:</strong> <span th:text="${reservation.lastName}"></span></p>
+    <p><strong>Phone:</strong> <span th:text="${reservation.phoneNumber}"></span></p>
+    <p><strong>Passengers:</strong> <span th:text="${reservation.numberOfPassengers}"></span></p>
+    <p><strong>Class:</strong> <span th:text="${reservation.seatClass}"></span></p>
+    <p><strong>Date:</strong> <span th:text="${reservation.dateOfDeparting}"></span></p>
+
+    <h3>Payment Info</h3>
+    <p><strong>Amount:</strong> <span th:text="${payment.amount}"></span></p>
+    <p><strong>Method:</strong> <span th:text="${payment.method}"></span></p>
+    <p><strong>Status:</strong> <span th:text="${payment.status}"></span></p>
+</body>
+</html>
